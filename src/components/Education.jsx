@@ -1,150 +1,158 @@
-import { useState, useEffect } from 'react';
-import { Container, Typography, Paper, Box, Grid } from '@mui/material';
-import { motion } from 'framer-motion';
-import SchoolIcon from '@mui/icons-material/School';
-import endpoints from '../constants/endpoints';
-import FallbackSpinner from './FallbackSpinner';
+import React, { useState } from "react";
+import EducationLoader from "./ui/EducationLoader";
+import {
+  Star,
+  Award,
+  Calendar,
+  BookOpen,
+  GraduationCap,
+  Trophy,
+} from "lucide-react";
+import { motion } from "framer-motion";
 
-const styles = {
-  container: {
-    py: 8,
-  },
-  title: {
-    textAlign: 'center',
-    mb: 6,
-  },
-  subtitle: {
-    textAlign: 'center',
-    color: 'text.secondary',
-    mb: 8,
-  },
-  educationCard: {
-    height: '100%',
-    p: 3,
-    position: 'relative',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      left: 0,
-      top: 0,
-      bottom: 0,
-      width: '4px',
-      backgroundColor: 'primary.main',
-      borderRadius: '2px',
+const EducationSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const educationData = [
+    {
+      degree: "Secondary School Certificate (SSC)",
+      school: "Natore Textile Institute",
+      mascot: "📘",
+      year: "2019-2021",
+      achievements: ["GPA: 4.89", "Subject: Science"],
+      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      description:
+        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
     },
-  },
-  schoolName: {
-    fontWeight: 600,
-    mb: 1,
-  },
-  degree: {
-    color: 'primary.main',
-    mb: 1,
-  },
-  date: {
-    color: 'text.secondary',
-    mb: 2,
-  },
-  description: {
-    color: 'text.secondary',
-  },
-  icon: {
-    fontSize: 40,
-    color: 'primary.main',
-    mb: 2,
-  },
-};
+    {
+      degree: "Higher Secondary Certificate (HSC)",
+      school: "Dottopara Model Degree College",
+      mascot: "📗",
+      year: "2021-2023",
+      achievements: ["GPA: 4.25", "Subject: Arts"],
+      skills: ["Literature", "Social Studies", "Economics", "History"],
+      description:
+        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+    },
+  ];
 
-function Education() {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-  useEffect(() => {
-    fetch(endpoints.education, {
-      method: 'GET',
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Failed to fetch education data');
-        }
-        return res.json();
-      })
-      .then((res) => {
-        if (!res || !Array.isArray(res.education)) {
-          throw new Error('Invalid education data format');
-        }
-        setData(res);
-      })
-      .catch((err) => {
-        console.error('Error loading education data:', err);
-        setError(err.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <FallbackSpinner />;
-  }
-
-  if (error) {
-    return (
-      <Container maxWidth="lg" sx={styles.container}>
-        <Typography variant="h6" color="error" align="center">
-          {error}
-        </Typography>
-      </Container>
-    );
-  }
-
-  if (!data?.education?.length) {
-    return null;
-  }
+  const cardVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
-    <Container maxWidth="lg" sx={styles.container}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Typography variant="h3" component="h1" sx={styles.title}>
-          Education
-        </Typography>
-        <Typography variant="h6" sx={styles.subtitle}>
-          My academic journey and qualifications
-        </Typography>
-        <Grid container spacing={4}>
-          {data.education.map((edu, index) => (
-            <Grid item xs={12} md={6} key={edu.school}>
-              <motion.div
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Paper elevation={3} sx={styles.educationCard}>
-                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <SchoolIcon sx={styles.icon} />
-                    <Typography variant="h5" sx={styles.schoolName}>
-                      {edu.cardTitle}
-                    </Typography>
-                    <Typography variant="h6" sx={styles.degree}>
-                      {edu.cardSubtitle}
-                    </Typography>
-                    <Typography variant="subtitle1" sx={styles.date}>
-                      {edu.title}
-                    </Typography>
-                  </Box>
-                </Paper>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-      </motion.div>
-    </Container>
-  );
-}
+    <section
+      className="min-h-screen relative overflow-hidden py-40 bg-gradient-to-b from-[#020617] via-[#0a0f1f] to-[#000D1A]/90"
+    >
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
+            Educational Journey
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
+            Discover how academic excellence shapes innovative thinking and
+            professional growth.
+          </p>
+        </motion.div>
 
-export default Education; 
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
+                hoveredIndex === index
+                  ? "border-teal-500 scale-[1.02]"
+                  : "border-blue-400/20"
+              }`}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="space-y-6">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl">{edu.mascot}</span>
+                    <h3 className="text-2xl font-bold text-white">
+                      {edu.degree}
+                    </h3>
+                  </div>
+                  <p className="text-lg text-gray-300 flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-teal-500" />
+                    {edu.school}
+                  </p>
+                  <p className="text-gray-400 flex items-center gap-2">
+                    <Calendar className="w-4 h-4" />
+                    {edu.year}
+                  </p>
+                </div>
+
+                <p className="text-gray-300 text-sm italic border-l-2 border-teal-500 pl-3">
+                  {edu.description}
+                </p>
+
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-white flex items-center gap-2">
+                    <Trophy className="w-4 h-4 text-yellow-500" />
+                    Key Achievements
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.achievements.map((achievement, i) => (
+                      <div
+                        key={i}
+                        className="px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 flex items-center gap-2 text-sm"
+                      >
+                        <Award className="w-4 h-4" />
+                        <span>{achievement}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {edu.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default EducationSection;
