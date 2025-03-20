@@ -14,10 +14,10 @@ const MacOsButtons = () => (
 const ProjectShowcase = () => {
   const projects = [
     {
-      title: "Olova! A Lightweight JavaScript Library",
+      title: "Fourlegs – LMS",
       description:
-        "Olova.js is a lightweight JavaScript library for building modern, reactive, and dynamic web applications. It features a simple, component-based architecture, enabling developers to create reusable and interactive UI elements with minimal code and overhead.",
-      tags: ["JavaScript", "Reactive", "Web Development"],
+        "A Multi-Tenant Learning Management System designed for organizations with multiple roles, including Super Admin, RTO Admin, Student, Trainer, Employer, and Marketing Website. Focused on user management and seamless feature integration.",
+      tags: ["React.js", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AWS"],
       links: {
         github: "https://github.com/olovajs/olova",
         demo: "https://olova.js.org/",
@@ -25,6 +25,18 @@ const ProjectShowcase = () => {
       image: olova,
       featured: true,
     },
+    {
+      title: "FoxyHomes – IMS",
+      description:
+        "A comprehensive Inventory Management System with job tracking, user administration, and vehicle monitoring. Designed an intuitive dashboard for data analysis and role management.",
+      tags: ["React.js", "Node.js", "Express.js", "MySQL", "Tailwind CSS", "AWS"],
+      links: {
+        github: "https://github.com/olovajs/olova",
+        demo: "https://olova.js.org/",
+      },
+      image: olova,
+      featured: true,
+    }
   ];
 
   return (

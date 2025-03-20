@@ -55,29 +55,30 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
+      title: "Sr. Web Developer",
+      company: "Mahatma Gandhi University (Corporate Office)",
+      period: "2018 - 2021",
       description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+        "Developed and maintained web applications, ensuring optimal performance and security using PHP and WordPress.",
     },
     {
       icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
+      title: "Full Stack Developer (Sr. Software Engineer)",
+      company: "Atdrive Group",
       period: "2021 - 2023",
       description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
+        "Developed backend services, optimized databases, and collaborated on cutting-edge web applications using Laravel, React.js, and AWS.",
     },
     {
       icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
+      title: "Software Developer (PHP Developer)",
+      company: "Entire IT Design Pvt Ltd",
       period: "2023 - Present",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "Built and maintained WordPress websites, customized themes and plugins, and contributed to backend development with PHP and MySQL.",
     },
   ];
+
 
   return (
     <>

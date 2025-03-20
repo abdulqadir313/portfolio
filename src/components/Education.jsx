@@ -15,26 +15,27 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
+      degree: "Bachelor of Science (Maths)",
+      school: "MJPRU, Bareilly",
       mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      year: "2006 - 2009",
+      achievements: [],
+      skills: ["Mathematics", "Analytical Thinking", "Problem-Solving"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Developed a strong foundation in mathematics, focusing on analytical problem-solving and quantitative reasoning.",
     },
     {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
+      degree: "Master of Computer Applications",
+      school: "Uttar Pradesh Technical University, Lucknow",
       mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      year: "2009 - 2012",
+      achievements: [],
+      skills: ["Software Development", "Database Management", "Web Technologies"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Specialized in computer applications with a focus on web development, database management, and software engineering.",
     },
   ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
