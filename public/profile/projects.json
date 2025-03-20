@@ -1,0 +1,56 @@
+{
+    "projects" : [
+        {
+            "image" : "images/projects/r3ciprocity.png",
+            "title": "R3ciprocity",
+            "bodyText": "- Access control on Documents\n -  Submissions of texts for reviewing.\n - Feedbacks on editors.\n - Editor ratings (1-5 stars). \n - Boosting jobs in a queue",
+            "links": [
+                {
+                    "text": "Live",
+                    "href": "https://www.r3ciprocity.com/"
+                }
+            ],
+            "tags" : [
+                "PHP7",
+                "Yii2 Framework",
+                "MYSQL",
+                "Amazon S3",
+                "Stripe"
+            ]
+        },
+        {
+            "image" : "images/projects/minres.png",
+            "title": "Minres",
+            "bodyText": "- Custom Course Detail Section.\n - Integrated Blog Section.\n - User-Friendly Interface.\n - Responsive Design\n - Performance Optimization\n - Integrated SEO",
+            "links": [
+                {
+                    "text": "Live",
+                    "href": "https://minres.com.au/"
+                }
+            ],
+            "tags" : [
+                "Wordpress"
+            ]
+        },
+        {
+            "image" : "images/projects/gethelpisrael.png",
+            "title": "Get Help Israel",
+            "bodyText": "- Get Help Israel -The Israel Association of Mental Health Professionals – serves a dual purpose. For clients who are seeking English-speaking mental health service providers, we are a trusted resource helping clients access the best services for their mental health needs..",
+            "links": [
+                {
+                    "text": "Live",
+                    "href": "https://gethelpisrael.com/"
+                }
+            ],
+            "tags" : [
+                "Core PHP",
+                "Mysql",
+                "BootStrap",
+                "HTML",
+                "Javascript",
+                "CSS"
+            ]
+        }
+       
+    ]
+}
