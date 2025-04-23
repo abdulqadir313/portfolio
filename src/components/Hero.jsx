@@ -47,7 +47,7 @@ const AnimatedGrid = () => {
 
 export default function Hero() {
   const words = [
-    "Full-Stack Developer & UI/UX Enthusiast",
+    "Full-Stack Developer",
     "JavaScript Developer",
     "Learning MARN Stack",
     "Linux & GitHub for DevOps Enthusiast",
